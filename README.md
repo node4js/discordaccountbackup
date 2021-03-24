@@ -14,7 +14,7 @@ usage instructions.
   - backup: `node backup.js backup [token]`
   - restore: `node backup.js restore [token]`
  
-what does this backup.
+what this backups.
 
   - friends
   - servers
