@@ -284,10 +284,10 @@ async function backupGuilds() {
 async function backupDMs() {
 	console.log('BACKING UP DMS. THIS WILL TAKE A LONG TIME.');
 	fs.readdir('dms_backup', (err, files) => {
-		if (err) throw err;
+		if (err) console.log(err);
 		for (const file of files) {
 			fs.unlink(path.join('dms_backup', file), err => {
-				if (err) throw err;
+				if (err) console.log(err);
 			});
 		}
 	});
