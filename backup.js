@@ -283,14 +283,18 @@ async function backupGuilds() {
 
 async function backupDMs() {
 	console.log('BACKING UP DMS. THIS WILL TAKE A LONG TIME.');
-	fs.readdir('dms_backup', (err, files) => {
-		if (err) console.log(err);
-		for (const file of files) {
-			fs.unlink(path.join('dms_backup', file), err => {
-				if (err) console.log(err);
-			});
-		}
-	});
+	try {
+	    fs.readdir('dms_backup', (err, files) => {
+	    	if (err) console.log(err);
+	    	for (const file of files) {
+	    		fs.unlink(path.join('dms_backup', file), err => {
+	    			if (err) console.log(err);
+	    		});
+	    	}
+	    });
+	} catch {
+	    console.log('you are do have did the funny.');
+	}
 	const ls = spawn('./dce/DiscordChatExporter.Cli.exe', ['exportdm', '-t', token, '-o', 'dms_backup']);
 	ls.stdout.on('data', (data) => {
 		console.log(`stdout: ${data}`);
