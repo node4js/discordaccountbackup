@@ -7,7 +7,7 @@ Backup your discord account. Simple and easy.
 
 installation instructions.
 
-  - execute `npm i axios` in cmd
+  - execute `npm i` in cmd
 
 usage instructions.
 
