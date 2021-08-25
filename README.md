@@ -13,7 +13,7 @@ usage instructions.
 
   - backup: `node backup.js backup [token]`
   - restore: `node backup.js restore [token]`
-  - **⚠️ DO NOT EXECUTE IN POWERSHELL AS IT STORES YOUR TOKENS IN THE POWERSHELL COMMAND HISTORY**
+  - **⚠️ DO NOT EXECUTE IN POWERSHELL AS IT STORES YOUR TOKENS PLAINTEXT IN THE POWERSHELL COMMAND HISTORY**
  
 what this backups.
 
