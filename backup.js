@@ -38,7 +38,7 @@ async function restoreFriendsAndStart() {
 	const backup = fs.readFileSync('backup.txt');
 	const backupFriends = backup.toString().split('--- BEGIN FRIENDS BACKUP ---\n')[1].split('\n--- END FRIENDS BACKUP ---')[0];
 	var arr = backupFriends.split('\n');
-	console.log(`ETA: ${arr.length * 16000}s`);
+	console.log(`ETA: ${arr.length * 16000}ms`);
 	for (var i = 0; i < arr.length; i++) {
 		await sleep(16000);
 		await axios({
@@ -89,7 +89,7 @@ async function restoreUserData() {
 	const backup = fs.readFileSync('backup.txt');
 	const backupUserData = backup.toString().split('--- START USERDATA BACKUP ---\n')[1].split('\n--- END USERDATA BACKUP ---')[0];
 	var arr = backupFriends.split('\n');
-	console.log(`ETA: ${arr.length * 11000}s`);
+	console.log(`ETA: ${arr.length * 11000}ms`);
 	for (var i = 0; i < arr.length; i++) {
 		await sleep(11000);
 		if(i == 0) {
@@ -234,7 +234,7 @@ async function restoreGuilds() {
 	const backup = fs.readFileSync('backup.txt');
 	const backupFriends = backup.toString().split('--- BEGIN GUILDS BACKUP ---\n')[1].split('\n--- END GUILDS BACKUP ---')[0];
 	var arr = backupFriends.split('\n');
-	console.log(`ETA: ${arr.length * 31000}s`);
+	console.log(`ETA: ${arr.length * 31000}ms`);
 	for (var i = 0; i < arr.length; i++) {
 		await axios({
 			method: 'post',
@@ -261,7 +261,7 @@ async function backupGuilds() {
         }
     }).then(async function(response) {
         fs.appendFileSync('backup.txt', '--- BEGIN GUILDS BACKUP ---\n');
-		console.log(`ETA: ${response.data.length * 3500}s`);
+		console.log(`ETA: ${response.data.length * 3500}ms`);
         for (var key in response.data) {
             if (response.data.hasOwnProperty(key)) {
                 console.log(`backup: ${response.data[key]['id']} (${response.data[key]['name']})`);
