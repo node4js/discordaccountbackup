@@ -174,7 +174,7 @@ async function hasPermissionsToChannel(guildID, permissions) {
     });
 	for(let key = 0; key < permissions.length; key++) {
 		if(roleids.includes(permissions[key].id) || everyoneid == permissions[key].id) {
-			if(((permissions[key].deny & 0x00000001) == 0x00000001) == false) {
+			if((permissions[key].deny & 0x00000001) != 0x00000001) {
 				return true;
 			}
 		}
