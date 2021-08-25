@@ -3,9 +3,9 @@ const axios = require('axios');
 const fs = require('fs');
 const path = require('path');
 const { spawn } = require('child_process');
-var userId;
-var userName;
-var userAvatar;
+let userId;
+let userName;
+let userAvatar;
 
 axios({
 	method: 'get',
