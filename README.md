@@ -15,7 +15,7 @@ usage instructions.
   - restore: `node backup.js restore [token]`
   - **⚠️ DO NOT EXECUTE IN POWERSHELL AS IT STORES YOUR TOKENS PLAINTEXT IN THE POWERSHELL COMMAND HISTORY**
  
-what this backups.
+what does this backup?
 
   - friends
   - servers
